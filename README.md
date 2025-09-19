@@ -63,7 +63,7 @@ Access the app: http://<EC2-PUBLIC-IP>:8000.
 
 Running with Docker Compose
 ```
-docker-compose up -d
+docker-compose up --build
 ```
 Stop app:
 ```
