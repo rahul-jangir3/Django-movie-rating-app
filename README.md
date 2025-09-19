@@ -59,24 +59,6 @@ docker run -dit -p 8000:8000 --name movie_container movieapp
 ```
 Access the app: http://<EC2-PUBLIC-IP>:8000.
 
----
-
-Running with Docker Compose
-```
-docker-compose up --build
-```
-Stop app:
-```
-docker-compose down
-```
-View logs:
-```
-docker-compose logs -f
-```
-Note: SQLite DB is persisted in Docker volume movie_db. Deleting the container will not delete the DB unless the volume is removed:
-```
-docker volume rm movie_project_movie_db
-```
 ----
 Simulating Traffic (movie_traffic.py)
 Use the Python script to automatically add and delete movies, and refresh the homepage multiple times to simulate traffic.
