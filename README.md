@@ -23,7 +23,7 @@ Database: SQLite (persisted with Docker volume).
 
 ---
 
-## 2 PCreate a Python virtual environment:
+## 2 Create a Python virtual environment:
 ```
 python -m venv venv
 source venv/bin/activate          # Linux/Mac
