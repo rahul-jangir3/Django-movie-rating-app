@@ -1,0 +1,30 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mini Prime - Movies</title>
+  <link rel="stylesheet" href="{% static 'movies/css.css' %}" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo">Mini<span>Prime</span></h1>
+      <nav>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'add_movie' %}" class="btn">Add Movie</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© {{ now.year }} MiniPrime — classic UI vibes</div>
+  </footer>
+</body>
+</html>
+

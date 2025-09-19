@@ -1,0 +1,25 @@
+{% extends "movies/base.html" %}
+{% load static %}
+{% block content %}
+  <section class="form-wrap">
+    <h2>Add a Movie</h2>
+    <form method="post" novalidate>
+      {% csrf_token %}
+      <div class="form-row">
+        {{ form.title.label_tag }}<br>
+        {{ form.title }}
+        {% for e in form.title.errors %}<div class="field-error">{{ e }}</div>{% endfor %}
+      </div>
+      <div class="form-row">
+        {{ form.rating.label_tag }}<br>
+        {{ form.rating }}
+        {% for e in form.rating.errors %}<div class="field-error">{{ e }}</div>{% endfor %}
+      </div>
+      <div class="form-row">
+        <button type="submit" class="btn primary">Save</button>
+        <a href="{% url 'home' %}" class="btn">Cancel</a>
+      </div>
+    </form>
+  </section>
+{% endblock %}
+

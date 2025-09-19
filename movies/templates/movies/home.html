@@ -1,0 +1,28 @@
+{% extends "movies/base.html" %}
+{% load static %}
+{% block content %}
+  <section class="hero">
+    <h2>Featured Movies</h2>
+    <p class="muted">A clean, Prime-like card layout showing movie name and rating.</p>
+  </section>
+
+  <section class="grid">
+    {% if movies %}
+      {% for movie in movies %}
+        <article class="card">
+          <div class="card-body">
+            <h3>{{ movie.title }}</h3>
+            <span class="rating">⭐ {{ movie.rating }}</span>
+            <div class="actions">
+               <a href="{% url 'edit_movie' movie.id %}">Edit</a> |
+               <a href="{% url 'delete_movie' movie.id %}">Delete</a>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    {% else %}
+      <p>No movies yet. <a href="{% url 'add_movie' %}">Add one</a> to get started!</p>
+    {% endif %}
+  </section>
+{% endblock %}
+
